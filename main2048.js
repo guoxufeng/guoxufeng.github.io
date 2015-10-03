@@ -21,21 +21,26 @@ function prepareForMobile(){
     }
 
     $('header').css({'width':gridContainerWidth - 2*cellSpace,
-                     'height':(gridContainerWidth - 2*cellSpace)/2,
-                     'padding-top':cellSpace,
-                      'margin-bottom':-2*cellSpace});
+                     'height':(gridContainerWidth - 5*cellSpace)/2
+
+                    });
+    $('header').css('margin-top', cellSpace/4);
+    $('header h1').css('font-size',2*cellSpace);
+    $('header p').css('font-size',1.25*cellSpace);
+    $('#newgamebutton').css('margin','cellSpace/2 auto');
+    $('#newgamebutton').css('padding','cellSpace/2 cellSpace/2');
+    $('#newgamebutton').css('border-radius',cellSpace/2);
+    $('header p').css('margin','cellSpace/2 auto');
 
     $('#grid-container').css({'width':gridContainerWidth - 2*cellSpace,
                              'height':gridContainerWidth - 2*cellSpace,
-                             'padding-left':cellSpace,
-                             'padding-right':cellSpace,
-                             'padding-bottom':cellSpace,
+                             'padding':cellSpace,
                              'border-radius':0.02*gridContainerWidth });
 
 
     $('.grid-cell').css({'width':cellSideLength,
                          'height':cellSideLength,
-                         'border-radius':0.02*cellSideLength   });
+                         'border-radius':0.04*cellSideLength   });
 
 }
 
@@ -97,7 +102,7 @@ function updateBoardView(){
             hasConflicted[i][j] = false;
         }
 
-    $('.number-cell').css({'line-height':cellSideLength+'px','font-size':0.2*cellSideLength+'px'});
+    $('.number-cell').css({'line-height':cellSideLength+'px','font-size':0.2*cellSideLength+'px','border-radius':0.04*cellSideLength});
 
 }
 
@@ -212,6 +217,7 @@ document.addEventListener('touchend',function(event){
         if( deltax > 0 ){
             //move right
             if( moveRight() ){
+                event.preventDefault();
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
@@ -219,6 +225,7 @@ document.addEventListener('touchend',function(event){
         else{
             //move left
             if( moveLeft() ){
+                event.preventDefault();
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
@@ -228,6 +235,7 @@ document.addEventListener('touchend',function(event){
         if( deltay > 0 ){
             //move down
             if( moveDown() ){
+                event.preventDefault();
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
@@ -235,6 +243,7 @@ document.addEventListener('touchend',function(event){
         else{
             //move up
             if( moveUp() ){
+                event.preventDefault();
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }

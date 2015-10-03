@@ -1,3 +1,7 @@
+*{
+    padding:0;
+    margin: 0;
+}
 body{
     background:url("bg.jpg") repeat;
 }
@@ -7,8 +11,9 @@ header{
     margin:0 auto;
     width:100%;
     text-align:center;
+    
 
-   margin-bottom: -30px;
+   
 
 }
 
@@ -59,7 +64,7 @@ header p{
     height:460px;
     padding:20px;
 
-    margin:10px auto;
+    margin:0 auto;
     background-color:#bbada0;
 
     border-radius: 10px;
