@@ -216,16 +216,18 @@ document.addEventListener('touchend',function(event){
 
         if( deltax > 0 ){
             //move right
+            event.preventDefault();
             if( moveRight() ){
-                event.preventDefault();
+                
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
         }
         else{
             //move left
+            event.preventDefault();
             if( moveLeft() ){
-                event.preventDefault();
+                
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
@@ -234,16 +236,18 @@ document.addEventListener('touchend',function(event){
     else{
         if( deltay > 0 ){
             //move down
+            event.preventDefault();
             if( moveDown() ){
-                event.preventDefault();
+                
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
         }
         else{
             //move up
+            event.preventDefault();
             if( moveUp() ){
-                event.preventDefault();
+                
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isgameover()",300);
             }
